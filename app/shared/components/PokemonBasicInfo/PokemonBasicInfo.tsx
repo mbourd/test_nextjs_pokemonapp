@@ -142,6 +142,46 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
               }
             />
           </ListItem>
+          <Divider variant="inset" component="li" />
+
+          <ListItem alignItems="flex-start">
+            <ListItemText
+              primary="Weight"
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    data-test-id="ListItemText-Typography-Weight"
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    {(pokemon?.weight ?? 0) + ' dkg'}
+                  </Typography>
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
+
+          <ListItem alignItems="flex-start">
+            <ListItemText
+              primary="Height"
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    data-test-id="ListItemText-Typography-Height"
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    {(pokemon?.height ?? 0) + ' dm'}
+                  </Typography>
+                </React.Fragment>
+              }
+            />
+          </ListItem>
         </List>
       </Box>
     </PokemonBasicInfoStyled>

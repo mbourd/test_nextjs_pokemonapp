@@ -20,6 +20,8 @@ export type PokemonFullDetailAPIType = {
     front_shiny?: string;
   };
   name?: string;
+  weight?: number;
+  height?: number;
 };
 
 export type PokemonShortDetailAPIType = {
