@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@/setupTests";
 import { PokemonDetailCard } from "./PokemonDetailCard";
 import { PokemonShortDetailAPIType } from "@/app/types";
-import { expect } from '@jest/globals';
+import { expect } from "@jest/globals";
 
 describe("<PokemonDetialCard />", function () {
   it("should display the Pokemon name", function () {

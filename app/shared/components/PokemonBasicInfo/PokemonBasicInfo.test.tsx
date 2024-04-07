@@ -1,10 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@/setupTests";
 import { PokemonBasicInfo } from "./PokemonBasicInfo";
-import {
-  PokemonFullDetailAPIType,
-  PokemonShortDetailAPIType,
-} from "@/app/types";
-import { expect, beforeAll } from "@jest/globals";
+import { expect } from "@jest/globals";
 
 import pokemonFullDetail from "../../../../cypress/fixtures/pokemon-full-detail-shayminland.json";
 
