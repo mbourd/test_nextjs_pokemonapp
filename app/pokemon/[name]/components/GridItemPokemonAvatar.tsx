@@ -20,7 +20,7 @@ const GridItemPokemonAvatar: React.FC<GridItemPokemonAvatarPropsType> = ({
   }, [pokemon?.cries.latest]);
 
   return (
-    <GridItemPokemonAvatarStyled item xs={4} md={4} lg={4}>
+    <GridItemPokemonAvatarStyled item xs={4} md={4} lg={4} $types={pokemon?.types}>
       <Badge
         badgeContent={<VolumeUpIcon />}
         color="secondary"

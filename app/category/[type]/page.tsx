@@ -53,7 +53,7 @@ const PokemonListPage: React.FC<PokemonListPropsType> = ({ params }) => {
                   onClickPokemon(pokemon.pokemon.name);
               }}
             >
-              <PokemonDetailCard pokemon={pokemon} />
+              <PokemonDetailCard pokemon={pokemon} type={type} />
             </Grid>
           );
         })}

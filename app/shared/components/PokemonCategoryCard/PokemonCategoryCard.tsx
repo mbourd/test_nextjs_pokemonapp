@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Card,
@@ -14,9 +14,12 @@ type PokemonCategoryPropsType = {
   onClick?: React.MouseEventHandler<HTMLElement>;
 };
 
-const PokemonCategoryCard: React.FC<PokemonCategoryPropsType> = ({ type, onClick }) => {
+const PokemonCategoryCard: React.FC<PokemonCategoryPropsType> = ({
+  type,
+  onClick,
+}) => {
   return (
-    <PokemonCategoryCardStyled className="PokemonCategoryCard">
+    <PokemonCategoryCardStyled className="PokemonCategoryCard" $typeName={type?.name}>
       <Card onClick={onClick}>
         <CardActionArea>
           {/* <CardMedia
@@ -27,7 +30,7 @@ const PokemonCategoryCard: React.FC<PokemonCategoryPropsType> = ({ type, onClick
         /> */}
           <CardContent data-test-id="PokemonCategoryCard-CardContent">
             <Typography gutterBottom variant="h5" component="div">
-              {type?.name?.toUpperCase() ?? ''}
+              {type?.name?.toUpperCase() ?? ""}
             </Typography>
           </CardContent>
         </CardActionArea>
