@@ -86,8 +86,13 @@ const SearchContainer = React.forwardRef<
           }
         }}
       />
-      <Button fitHeight size="large" onClick={() => refetchPokemonDetail()}>
-        <span>Search</span><PokeBallIconSVG/>
+      <Button
+        fitHeight
+        size="large"
+        onClick={() => refetchPokemonDetail()}
+        endIcon={<PokeBallIconSVG />}
+      >
+        <span>Search</span>
       </Button>
     </SearchContainerStyled>
   );

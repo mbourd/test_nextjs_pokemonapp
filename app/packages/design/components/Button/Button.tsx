@@ -13,6 +13,7 @@ type ButtonType = {
   onClick?: (e: React.MouseEvent) => void;
   style?: React.CSSProperties;
   fitHeight?: boolean;
+  endIcon?: React.ReactNode;
 };
 
 export const Button: React.FC<React.PropsWithChildren<ButtonType>> = ({
@@ -24,7 +25,8 @@ export const Button: React.FC<React.PropsWithChildren<ButtonType>> = ({
   disabled,
   onClick,
   style,
-  fitHeight
+  fitHeight,
+  endIcon
 }) => {
   return (
     <ButtonStyled $fitHeight={fitHeight}>
@@ -37,6 +39,8 @@ export const Button: React.FC<React.PropsWithChildren<ButtonType>> = ({
         onClick={onClick}
         href={href}
         style={style}
+        endIcon={endIcon}
+        color="secondary"
       >
         {children}
       </MUIButton>
