@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "test": "jest --watchAl=false",
+    "test": "jest --watchAll=false",
     "cypress:install": "cypress install",
     "cypress:open": "cypress open",
     "cypress:open:debug:all": "DEBUG=cypress:* cypress open",
