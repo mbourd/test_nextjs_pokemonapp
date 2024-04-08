@@ -1,7 +1,7 @@
 'use client';
 
 /* eslint-disable react/display-name */
-import { TextField } from '@mui/material';
+import { CircularProgress, TextField } from '@mui/material';
 import * as React from 'react';
 import { useQuery } from 'react-query';
 import { Button } from '../packages/design/components/Button/Button';
@@ -90,7 +90,13 @@ const SearchContainer = React.forwardRef<
         fitHeight
         size="large"
         onClick={() => refetchPokemonDetail()}
-        endIcon={<PokeBallIconSVG />}
+        endIcon={
+          isLoadingPokemonDetail ? (
+            <CircularProgress color="warning" />
+          ) : (
+            <PokeBallIconSVG />
+          )
+        }
       >
         <span>Search</span>
       </Button>
