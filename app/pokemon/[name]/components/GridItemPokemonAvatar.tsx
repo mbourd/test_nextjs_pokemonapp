@@ -39,6 +39,7 @@ const GridItemPokemonAvatar: React.FC<GridItemPokemonAvatarPropsType> = ({
               alignItems: 'center',
             }}
           >
+            {isShiny && '🌟'}
             <Badge
               badgeContent={<VolumeUpIcon />}
               color="secondary"
@@ -60,7 +61,10 @@ const GridItemPokemonAvatar: React.FC<GridItemPokemonAvatarPropsType> = ({
                   'rgba(255, 205, 0, 0.1)',
                   'rgba(255, 205, 0, 1)',
                 ]}
-                style={{ fontSize: '3rem', fontWeight: 'bolder' }}
+                style={{
+                  fontSize: 'clamp(14px, 2vw, 24px)',
+                  fontWeight: 'bolder',
+                }}
               />
             </Badge>
             {isShiny && '🌟'}
