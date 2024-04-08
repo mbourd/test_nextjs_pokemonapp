@@ -1,8 +1,9 @@
+'use client';
+
 import * as React from 'react';
-import { StarIconSVG } from '@/app/packages/design/components/Icons/StarIconSVG';
 import { TextShine } from '@/app/packages/design/components/TextShine/TextShine';
 import { PokemonFullDetailAPIType } from '@/app/types';
-import { Badge, Avatar, Fade } from '@mui/material';
+import { Badge, Avatar, Fade, Grid } from '@mui/material';
 import { GridItemPokemonAvatarStyled } from './GridItemPokemonAvatar.style';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
@@ -28,32 +29,43 @@ const GridItemPokemonAvatar: React.FC<GridItemPokemonAvatarPropsType> = ({
         lg={4}
         $types={pokemon?.types}
       >
-        <Badge
-          badgeContent={<VolumeUpIcon />}
-          color="secondary"
-          onClick={onClickPlayCries}
-        >
-          <TextShine
-            text={pokemon?.name?.toUpperCase()}
-            enabled={isShiny}
-            colors={[
-              'rgba(255, 205, 0, 1)',
-              'rgba(255, 205, 0, 0.9)',
-              'rgba(255, 205, 0, 0.8)',
-              'rgba(255, 205, 0, 0.7)',
-              'rgba(255, 205, 0, 0.6)',
-              'rgba(255, 205, 0, 0.5)',
-              'rgba(255, 205, 0, 0.4)',
-              'rgba(255, 205, 0, 0.3)',
-              'rgba(255, 205, 0, 0.2)',
-              'rgba(255, 205, 0, 0.1)',
-              'rgba(255, 205, 0, 1)',
-            ]}
-            style={{ fontSize: '3rem', fontWeight: 'bolder' }}
-          />
-        </Badge>
-        {isShiny && <StarIconSVG />}
-
+        <Grid container>
+          <Grid
+            item
+            xs={12}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Badge
+              badgeContent={<VolumeUpIcon />}
+              color="secondary"
+              onClick={onClickPlayCries}
+            >
+              <TextShine
+                text={pokemon?.name?.toUpperCase()}
+                enabled={isShiny}
+                colors={[
+                  'rgba(255, 205, 0, 1)',
+                  'rgba(255, 205, 0, 0.9)',
+                  'rgba(255, 205, 0, 0.8)',
+                  'rgba(255, 205, 0, 0.7)',
+                  'rgba(255, 205, 0, 0.6)',
+                  'rgba(255, 205, 0, 0.5)',
+                  'rgba(255, 205, 0, 0.4)',
+                  'rgba(255, 205, 0, 0.3)',
+                  'rgba(255, 205, 0, 0.2)',
+                  'rgba(255, 205, 0, 0.1)',
+                  'rgba(255, 205, 0, 1)',
+                ]}
+                style={{ fontSize: '3rem', fontWeight: 'bolder' }}
+              />
+            </Badge>
+            {isShiny && '🌟'}
+          </Grid>
+        </Grid>
         <Avatar
           variant={'square'}
           alt={pokemon?.name?.toUpperCase()}

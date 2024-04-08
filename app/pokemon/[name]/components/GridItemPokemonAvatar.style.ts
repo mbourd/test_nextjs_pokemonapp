@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 import { Grid } from '@mui/material';
 
@@ -8,6 +10,7 @@ type GridItemPokemonAvatarStyledPropsType = {
 const GridItemPokemonAvatarStyled = styled(
   Grid,
 )<GridItemPokemonAvatarStyledPropsType>`
+  padding-left: 0 !important;
   border: solid 3px red;
   border-radius: 20px;
   background: ${({ theme, $types }) => {

@@ -1,3 +1,5 @@
+'use client';
+
 import { PokemonFullDetailAPIType } from '@/app/types';
 import { Fade, Grid } from '@mui/material';
 import dynamic from 'next/dynamic';

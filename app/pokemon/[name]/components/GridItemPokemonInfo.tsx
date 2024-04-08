@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { PokemonBasicInfo } from '@/app/shared/components/PokemonBasicInfo/PokemonBasicInfo';
 import { PokemonFullDetailAPIType } from '@/app/types';

@@ -3,7 +3,6 @@
 import { PokemonFullDetailAPIType } from '@/app/types';
 import {
   Box,
-  Chip,
   Divider,
   List,
   ListItem,
@@ -13,6 +12,8 @@ import {
 } from '@mui/material';
 import * as React from 'react';
 import { PokemonBasicInfoStyled } from './PokemonBasicInfo.style';
+import { ChipColoredTypeStyled } from './ChipColoredType.style';
+import { ChipStyled } from '@/app/packages/design/components/Chip/Chip.style';
 
 type PokemonBasicInfoPropsType = {
   pokemon?: PokemonFullDetailAPIType;
@@ -69,11 +70,13 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   {pokemon?.types?.map((type, index) => {
                     return (
-                      <Chip
+                      <ChipColoredTypeStyled
                         data-testid="ListItemText-Chip-Types"
+                        // @ts-ignore
                         component={'span'}
                         key={`${type?.type?.name}${index}`}
                         label={type?.type?.name ?? ''}
+                        $type={type?.type?.name}
                       />
                     );
                   })}
@@ -90,8 +93,9 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   {pokemon?.abilities?.map((ability, index) => {
                     return (
-                      <Chip
+                      <ChipStyled
                         data-testid="ListItemText-Chip-Abilities"
+                        // @ts-ignore
                         component={'span'}
                         key={`${ability?.ability?.name}${index}`}
                         label={ability?.ability?.name ?? ''}
