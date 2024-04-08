@@ -31,3 +31,18 @@ export type PokemonShortDetailAPIType = {
   };
   slot?: number;
 };
+
+export type PokemonDexFlavorTextEntryType = {
+  flavor_text?: string;
+  language?: {
+    name?: string;
+    url?: string;
+  };
+  version?: {
+    name?: string;
+    url?: string;
+  };
+};
+export type PokemonDexEntryAPIType = {
+  flavor_text_entries?: PokemonDexFlavorTextEntryType[];
+};

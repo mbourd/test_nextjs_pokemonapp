@@ -85,6 +85,21 @@ This will execute cypress run command to test each E2E spec files.
 yarn test
 ```
 
+## Run Linters
+
+```bash
+# ESLint
+yarn lint
+yarn lint:fix
+
+# Stylelint
+yarn lint:style
+yarn lint:style:fix
+
+# Prettier
+yarn prettier:fix
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
