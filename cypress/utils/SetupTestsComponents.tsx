@@ -1,7 +1,7 @@
-import * as React from "react";
-import { ThemeProvider } from "styled-components";
-import { StyledEngineProvider } from "@mui/material";
-import { ThirdPartySoftwareProvider } from "../../providers/ThirdPartySoftwareProvider";
+import * as React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { StyledEngineProvider } from '@mui/material';
+import { ThirdPartySoftwareProvider } from '../../providers/ThirdPartySoftwareProvider';
 
 type SetupTestsComponentProps = {};
 

@@ -4,59 +4,59 @@
 // NOTE: Run CLI:
 // yarn cypress:run:component --browser chrome --config video=false --spec "app/shared/components/PokemonCategoryCard/PokemonCategoryCard.cy.tsx"
 
-import React from "react";
-import { SetupTestsComponents } from "../../../../cypress/utils/SetupTestsComponents";
+import React from 'react';
+import { SetupTestsComponents } from '../../../../cypress/utils/SetupTestsComponents';
 
-import { PokemonCategoryCard } from "./PokemonCategoryCard";
+import { PokemonCategoryCard } from './PokemonCategoryCard';
 
-describe("<PokemonCategoryCard />", function () {
-  it("should have text type", function () {
-    const type = { name: "grass" };
+describe('<PokemonCategoryCard />', function () {
+  it('should have text type', function () {
+    const type = { name: 'grass' };
 
     cy.mount(
       <SetupTestsComponents>
         <PokemonCategoryCard type={type} />
-      </SetupTestsComponents>
+      </SetupTestsComponents>,
     )
       .wait(1000)
       .then(() => {
         cy.get('[data-test-id="PokemonCategoryCard-CardContent"]').should(
-          "have.text",
-          type?.name.toUpperCase()
+          'have.text',
+          type?.name.toUpperCase(),
         );
       });
   });
 
-  it("should have text type", function () {
-    const type = { name: "fire" };
+  it('should have text type', function () {
+    const type = { name: 'fire' };
 
     cy.mount(
       <SetupTestsComponents>
         <PokemonCategoryCard type={type} />
-      </SetupTestsComponents>
+      </SetupTestsComponents>,
     )
       .wait(1000)
       .then(() => {
         cy.get('[data-test-id="PokemonCategoryCard-CardContent"]').should(
-          "have.text",
-          type?.name.toUpperCase()
+          'have.text',
+          type?.name.toUpperCase(),
         );
       });
   });
 
-  it("should have text type", function () {
-    const type = { name: "water" };
+  it('should have text type', function () {
+    const type = { name: 'water' };
 
     cy.mount(
       <SetupTestsComponents>
         <PokemonCategoryCard type={type} />
-      </SetupTestsComponents>
+      </SetupTestsComponents>,
     )
       .wait(1000)
       .then(() => {
         cy.get('[data-test-id="PokemonCategoryCard-CardContent"]').should(
-          "have.text",
-          type?.name.toUpperCase()
+          'have.text',
+          type?.name.toUpperCase(),
         );
       });
   });

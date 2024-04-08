@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import Typography from "@mui/material/Typography";
-import { useQuery } from "react-query";
-import { fetchPokemonCategories } from "./api/pokemon";
-import { PokemonCategoryCard } from "./shared/components/PokemonCategoryCard/PokemonCategoryCard";
-import { Grid } from "@mui/material";
-import { useRouter } from "next/navigation";
-import { WaitLoaded } from "./shared/components/WaitLoaded/WaitLoaded";
-import { PokemonDetailCard } from "./shared/components/PokemonDetailCard/PokemonDetailCard";
-import { CategoryAPIType } from "./types";
+import * as React from 'react';
+import Typography from '@mui/material/Typography';
+import { useQuery } from 'react-query';
+import { fetchPokemonCategories } from './api/pokemon';
+import { PokemonCategoryCard } from './shared/components/PokemonCategoryCard/PokemonCategoryCard';
+import { Grid } from '@mui/material';
+import { useRouter } from 'next/navigation';
+import { WaitLoaded } from './shared/components/WaitLoaded/WaitLoaded';
+import { PokemonDetailCard } from './shared/components/PokemonDetailCard/PokemonDetailCard';
+import { CategoryAPIType } from './types';
 import {
   ImperativeHanlesType,
   SearchContainer,
-} from "./components/SearchContainer";
+} from './components/SearchContainer';
 
 function MyApp() {
   const refSearchContainer = React.useRef<ImperativeHanlesType>(null);
@@ -27,21 +27,21 @@ function MyApp() {
     data: categories,
     isLoading: isLoadingCategories,
     refetch: refetchCategories,
-  } = useQuery<CategoryAPIType[]>("pokemonCategories", fetchPokemonCategories, {
+  } = useQuery<CategoryAPIType[]>('pokemonCategories', fetchPokemonCategories, {
     enabled: true,
   });
 
   const onClickCategory = React.useCallback(
     (typeName: string) => {
-      router.push("/category/" + typeName);
+      router.push('/category/' + typeName);
     },
-    [router]
+    [router],
   );
   const onClickPokemon = React.useCallback(
     (pokemonName: string) => {
-      router.push("/pokemon/" + pokemonName);
+      router.push('/pokemon/' + pokemonName);
     },
-    [router]
+    [router],
   );
 
   React.useEffect(() => {
@@ -69,7 +69,7 @@ function MyApp() {
         setHasChangedSearchTerm={setHasChangedSearchTerm}
       />
       <Grid
-        className={"pokemon-categories"}
+        className={'pokemon-categories'}
         container
         spacing={3}
         rowSpacing={3}
@@ -78,10 +78,10 @@ function MyApp() {
         {(filteredCategories.length ? filteredCategories : categories)?.map(
           (type: CategoryAPIType) => {
             const searchTerm =
-              refSearchContainer.current?.getSearchTerm() ?? "";
+              refSearchContainer.current?.getSearchTerm() ?? '';
 
             return (
-              <Grid item xs={6} key={type?.name ?? ""}>
+              <Grid item xs={6} key={type?.name ?? ''}>
                 <PokemonCategoryCard
                   type={type}
                   onClick={() => {
@@ -100,7 +100,7 @@ function MyApp() {
                 ) : null}
               </Grid>
             );
-          }
+          },
         )}
       </Grid>
     </WaitLoaded>

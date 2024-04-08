@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 type PokemonDetailCardStyledPropsType = {
   $typeName?: string;
@@ -15,7 +15,7 @@ const PokemonDetailCardStyled = styled.div<PokemonDetailCardStyledPropsType>`
       if (!$typeName) return theme.pokemon.categories.colors.unknown;
 
       const color =
-        theme.pokemon.categories.colors?.[$typeName + ""] ??
+        theme.pokemon.categories.colors?.[$typeName + ''] ??
         theme.pokemon.categories.colors.unknown;
 
       return color;

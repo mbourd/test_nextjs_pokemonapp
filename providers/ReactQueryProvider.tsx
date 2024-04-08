@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { useState } from "react";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { useState } from 'react';
 
 function ReactQueryProvider({ children }: React.PropsWithChildren) {
   const [client] = useState(new QueryClient());

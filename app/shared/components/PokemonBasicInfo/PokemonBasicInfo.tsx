@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { PokemonFullDetailAPIType } from "@/app/types";
+import { PokemonFullDetailAPIType } from '@/app/types';
 import {
   Box,
   Chip,
@@ -10,9 +10,9 @@ import {
   ListItemText,
   ListSubheader,
   Typography,
-} from "@mui/material";
-import * as React from "react";
-import { PokemonBasicInfoStyled } from "./PokemonBasicInfo.style";
+} from '@mui/material';
+import * as React from 'react';
+import { PokemonBasicInfoStyled } from './PokemonBasicInfo.style';
 
 type PokemonBasicInfoPropsType = {
   pokemon?: PokemonFullDetailAPIType;
@@ -26,14 +26,14 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
       <Box
         sx={{
           my: 4,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <List
-          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
           component="nav"
           aria-labelledby="nested-list-subheader"
           subheader={
@@ -49,12 +49,12 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   <Typography
                     data-test-id="ListItemText-Typography-ID"
-                    sx={{ display: "inline" }}
+                    sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
                     color="text.primary"
                   >
-                    {pokemon?.id ?? ""}
+                    {pokemon?.id ?? ''}
                   </Typography>
                 </React.Fragment>
               }
@@ -71,9 +71,9 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                     return (
                       <Chip
                         data-test-id="ListItemText-Chip-Types"
-                        component={"span"}
+                        component={'span'}
                         key={`${type?.type?.name}${index}`}
-                        label={type?.type?.name ?? ""}
+                        label={type?.type?.name ?? ''}
                       />
                     );
                   })}
@@ -92,9 +92,9 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                     return (
                       <Chip
                         data-test-id="ListItemText-Chip-Abilities"
-                        component={"span"}
+                        component={'span'}
                         key={`${ability?.ability?.name}${index}`}
-                        label={ability?.ability?.name ?? ""}
+                        label={ability?.ability?.name ?? ''}
                       />
                     );
                   })}
@@ -111,12 +111,12 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   <Typography
                     data-test-id="ListItemText-Typography-Moves"
-                    sx={{ display: "inline" }}
+                    sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
                     color="text.primary"
                   >
-                    {pokemon?.moves?.length ?? ""}
+                    {pokemon?.moves?.length ?? ''}
                   </Typography>
                 </React.Fragment>
               }
@@ -131,12 +131,12 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   <Typography
                     data-test-id="ListItemText-Typography-BaseExp"
-                    sx={{ display: "inline" }}
+                    sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
                     color="text.primary"
                   >
-                    {pokemon?.base_experience ?? ""}
+                    {pokemon?.base_experience ?? ''}
                   </Typography>
                 </React.Fragment>
               }
@@ -151,7 +151,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   <Typography
                     data-test-id="ListItemText-Typography-Weight"
-                    sx={{ display: "inline" }}
+                    sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
                     color="text.primary"
@@ -171,7 +171,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                 <React.Fragment>
                   <Typography
                     data-test-id="ListItemText-Typography-Height"
-                    sx={{ display: "inline" }}
+                    sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
                     color="text.primary"

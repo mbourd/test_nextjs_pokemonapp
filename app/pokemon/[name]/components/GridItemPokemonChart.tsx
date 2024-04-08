@@ -1,14 +1,14 @@
-import { getRandomNumberBetween } from "@/app/packages/helpers/getRandomNumberBetween";
-import { PokemonFullDetailAPIType } from "@/app/types";
-import { Grid } from "@mui/material";
-import dynamic from "next/dynamic";
-import * as React from "react";
+import { getRandomNumberBetween } from '@/app/packages/helpers/getRandomNumberBetween';
+import { PokemonFullDetailAPIType } from '@/app/types';
+import { Grid } from '@mui/material';
+import dynamic from 'next/dynamic';
+import * as React from 'react';
 
 type GridItemPokemonChartPropsType = {
   pokemon?: PokemonFullDetailAPIType;
 };
 
-const ApexChartNoSSR = dynamic(() => import("react-apexcharts"), {
+const ApexChartNoSSR = dynamic(() => import('react-apexcharts'), {
   ssr: false,
 });
 
@@ -22,7 +22,7 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
   const options = React.useMemo(
     () => ({
       chart: {
-        id: "basic-graph",
+        id: 'basic-graph',
         toolbar: {
           show: false,
         },
@@ -31,7 +31,7 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
         categories: statsName,
       },
     }),
-    [statsName]
+    [statsName],
   );
 
   React.useEffect(() => {
@@ -39,12 +39,12 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
       if (pokemon?.stats) {
         setStatsName(
           pokemon.stats.map((stat) => {
-            return stat?.stat?.name ?? "";
-          })
+            return stat?.stat?.name ?? '';
+          }),
         );
         setSeries((series) => {
           const serie = {
-            name: "Basic stat",
+            name: 'Basic stat',
             data: pokemon.stats.map((stat) => {
               return stat?.base_stat ?? 0;
             }),
@@ -63,10 +63,10 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
       md={5}
       lg={5}
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        alignContent: "center",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
       }}
     >
       <ApexChartNoSSR
@@ -74,8 +74,8 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
         type="radar"
         options={options}
         series={series}
-        width={"800px"}
-        height={"500px"}
+        width={'800px'}
+        height={'500px'}
       />
     </Grid>
   );

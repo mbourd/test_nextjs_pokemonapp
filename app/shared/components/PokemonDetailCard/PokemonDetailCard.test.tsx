@@ -1,45 +1,45 @@
-import { render } from "@/setupTests";
-import { PokemonDetailCard } from "./PokemonDetailCard";
-import { PokemonShortDetailAPIType } from "@/app/types";
-import { expect } from "@jest/globals";
+import { render } from '@/setupTests';
+import { PokemonDetailCard } from './PokemonDetailCard';
+import { PokemonShortDetailAPIType } from '@/app/types';
+import { expect } from '@jest/globals';
 
-describe("<PokemonDetialCard />", function () {
-  it("should display the Pokemon name", function () {
+describe('<PokemonDetialCard />', function () {
+  it('should display the Pokemon name', function () {
     const pokemon: PokemonShortDetailAPIType = {
-      pokemon: { name: "venusaur", url: "" },
+      pokemon: { name: 'venusaur', url: '' },
     };
     const { container } = render(<PokemonDetailCard pokemon={pokemon} />);
     const content = container.querySelectorAll(
-      '[data-test-id="PokemonDetailCard-CardContent"]'
+      '[data-test-id="PokemonDetailCard-CardContent"]',
     );
 
     expect(content.length).toEqual(1);
-    expect(content[0].textContent).toEqual("Venusaur");
+    expect(content[0].textContent).toEqual('Venusaur');
   });
 
-  it("should display the Pokemon name", function () {
+  it('should display the Pokemon name', function () {
     const pokemon: PokemonShortDetailAPIType = {
-      pokemon: { name: "charizard", url: "" },
+      pokemon: { name: 'charizard', url: '' },
     };
     const { container } = render(<PokemonDetailCard pokemon={pokemon} />);
     const content = container.querySelectorAll(
-      '[data-test-id="PokemonDetailCard-CardContent"]'
+      '[data-test-id="PokemonDetailCard-CardContent"]',
     );
 
     expect(content.length).toEqual(1);
-    expect(content[0].textContent).toEqual("Charizard");
+    expect(content[0].textContent).toEqual('Charizard');
   });
 
-  it("should display the Pokemon name", function () {
+  it('should display the Pokemon name', function () {
     const pokemon: PokemonShortDetailAPIType = {
-      pokemon: { name: "blastoise", url: "" },
+      pokemon: { name: 'blastoise', url: '' },
     };
     const { container } = render(<PokemonDetailCard pokemon={pokemon} />);
     const content = container.querySelectorAll(
-      '[data-test-id="PokemonDetailCard-CardContent"]'
+      '[data-test-id="PokemonDetailCard-CardContent"]',
     );
 
     expect(content.length).toEqual(1);
-    expect(content[0].textContent).toEqual("Blastoise");
+    expect(content[0].textContent).toEqual('Blastoise');
   });
 });

@@ -1,14 +1,19 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import ReactQueryProvider from "@/providers/ReactQueryProvider";
-import theme from "@/theme";
-import { ThemeProvider } from "styled-components";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
-import dynamic from "next/dynamic";
+import * as React from 'react';
+import ReactQueryProvider from '@/providers/ReactQueryProvider';
+import theme from '@/theme';
+import { ThemeProvider } from 'styled-components';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import dynamic from 'next/dynamic';
 
-const StyledEngineProvider = dynamic(() => import("@mui/material/StyledEngineProvider"), { ssr: false });
-const CssBaseline = dynamic(() => import("@mui/material/CssBaseline"), { ssr: false });
+const StyledEngineProvider = dynamic(
+  () => import('@mui/material/StyledEngineProvider'),
+  { ssr: false },
+);
+const CssBaseline = dynamic(() => import('@mui/material/CssBaseline'), {
+  ssr: false,
+});
 
 const ThirdPartySoftwareProvider: React.FC<
   React.PropsWithChildren<unknown>

@@ -2,7 +2,7 @@ import { defineConfig } from 'cypress';
 
 // Default environment variables
 const EnvConfig = {
-  POKEMON_API_URL: 'https://pokeapi.co/api/v2'
+  POKEMON_API_URL: 'https://pokeapi.co/api/v2',
 };
 
 export default defineConfig({

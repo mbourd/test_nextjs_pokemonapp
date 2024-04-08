@@ -11,7 +11,9 @@ export const fetchPokemonsByCategory = async (category: any) => {
 };
 
 export const fetchPokemonDetail = async (pokemonId: any) => {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+  const response = await fetch(
+    `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+  );
   const data = await response.json();
   return data;
 };

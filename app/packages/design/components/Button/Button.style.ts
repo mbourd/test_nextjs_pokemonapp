@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 type ButtonStyledPropsType = {
   $fitHeight?: boolean;
@@ -8,6 +8,6 @@ type ButtonStyledPropsType = {
 
 export const ButtonStyled = styled.span<ButtonStyledPropsType>`
   button {
-    height: ${({ $fitHeight }) => $fitHeight ? '100%' : 'auto'};
+    height: ${({ $fitHeight }) => ($fitHeight ? '100%' : 'auto')};
   }
 `;

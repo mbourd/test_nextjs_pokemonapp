@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import { Typography, CircularProgress } from "@mui/material";
-import React from "react";
+import { Typography, CircularProgress } from '@mui/material';
+import React from 'react';
 
 type WaitLoadedPropsType = {
   isLoading?: boolean;

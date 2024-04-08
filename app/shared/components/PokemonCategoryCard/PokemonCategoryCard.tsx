@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -6,8 +6,8 @@ import {
   CardMedia,
   CardContent,
   Typography,
-} from "@mui/material";
-import { PokemonCategoryCardStyled } from "./PokemonCategoryCard.style";
+} from '@mui/material';
+import { PokemonCategoryCardStyled } from './PokemonCategoryCard.style';
 
 type PokemonCategoryPropsType = {
   type?: { name?: string; url?: string };
@@ -19,7 +19,10 @@ const PokemonCategoryCard: React.FC<PokemonCategoryPropsType> = ({
   onClick,
 }) => {
   return (
-    <PokemonCategoryCardStyled className="PokemonCategoryCard" $typeName={type?.name}>
+    <PokemonCategoryCardStyled
+      className="PokemonCategoryCard"
+      $typeName={type?.name}
+    >
       <Card onClick={onClick}>
         <CardActionArea>
           {/* <CardMedia
@@ -30,7 +33,7 @@ const PokemonCategoryCard: React.FC<PokemonCategoryPropsType> = ({
         /> */}
           <CardContent data-test-id="PokemonCategoryCard-CardContent">
             <Typography gutterBottom variant="h5" component="div">
-              {type?.name?.toUpperCase() ?? ""}
+              {type?.name?.toUpperCase() ?? ''}
             </Typography>
           </CardContent>
         </CardActionArea>

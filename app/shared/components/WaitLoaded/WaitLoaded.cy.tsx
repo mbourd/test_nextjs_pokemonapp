@@ -4,28 +4,28 @@
 // NOTE: Run CLI:
 // yarn cypress:run:component --browser chrome --config video=false --spec ""
 
-import React from "react";
-import { SetupTestsComponents } from "../../../../cypress/utils/SetupTestsComponents";
+import React from 'react';
+import { SetupTestsComponents } from '../../../../cypress/utils/SetupTestsComponents';
 
-import { WaitLoaded } from "./WaitLoaded";
+import { WaitLoaded } from './WaitLoaded';
 
-describe("<WaitLoaded />", function () {
-  it("should have text loading...", function () {
+describe('<WaitLoaded />', function () {
+  it('should have text loading...', function () {
     cy.mount(
       <SetupTestsComponents>
         <WaitLoaded isLoading />
-      </SetupTestsComponents>
+      </SetupTestsComponents>,
     )
       .wait(1000)
       .then(() => {
         cy.get('[data-test-id="WaitLoaded-Typography"]').should(
-          "have.text",
-          "Loading..."
+          'have.text',
+          'Loading...',
         );
       });
   });
 
-  it("should render the children component if not loading", function () {
+  it('should render the children component if not loading', function () {
     cy.mount(
       <SetupTestsComponents>
         <WaitLoaded>
@@ -33,11 +33,11 @@ describe("<WaitLoaded />", function () {
             Hello world, not loading anymore
           </div>
         </WaitLoaded>
-      </SetupTestsComponents>
+      </SetupTestsComponents>,
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="cypress-test"]').should("exist");
+        cy.get('[data-test-id="cypress-test"]').should('exist');
       });
   });
 });

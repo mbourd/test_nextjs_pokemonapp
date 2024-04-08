@@ -1,11 +1,13 @@
 {
   "plugins": [
-    "stylelint-order"
+    "stylelint-order",
+    "stylelint-prettier"
   ],
   "customSyntax": "postcss-styled-syntax",
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-recommended",
+    "stylelint-prettier/recommended",
     "stylelint-config-idiomatic-order"
   ],
   "rules": {
@@ -41,6 +43,7 @@
     "font-family-name-quotes": ["always-unless-keyword", {"severity": "error", "disableFix": true}],
     "font-family-no-missing-generic-family-keyword": [true, {"severity": "warning"}],
     "no-empty-source": null,
-    "value-keyword-case": null
+    "value-keyword-case": null,
+    "prettier/prettier": true
   }
 }

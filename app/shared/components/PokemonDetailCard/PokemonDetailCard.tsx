@@ -1,15 +1,14 @@
-"use client";
+'use client';
 
 import {
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
   Typography,
-} from "@mui/material";
-import { PokemonDetailCardStyled } from "./PokemonDetailCard.style";
-import { PokemonShortDetailAPIType } from "../../../types";
-import { capitalizeFirstLetter } from "@/app/packages/helpers/capitalizeFirstLetter";
+} from '@mui/material';
+import { PokemonDetailCardStyled } from './PokemonDetailCard.style';
+import { PokemonShortDetailAPIType } from '../../../types';
+import { capitalizeFirstLetter } from '@/app/packages/helpers/capitalizeFirstLetter';
 
 type PokemonCategoryPropsType = {
   pokemon?: PokemonShortDetailAPIType;
@@ -30,7 +29,7 @@ const PokemonDetailCard: React.FC<PokemonCategoryPropsType> = ({
             <Typography gutterBottom variant="h5" component="div">
               {pokemon?.pokemon?.name
                 ? capitalizeFirstLetter(pokemon.pokemon.name)
-                : ""}
+                : ''}
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -1,13 +1,13 @@
-"use client"
+'use client';
 
-import * as React from "react";
-import { Button as MUIButton } from "@mui/material";
-import { ButtonStyled } from "./Button.style";
+import * as React from 'react';
+import { Button as MUIButton } from '@mui/material';
+import { ButtonStyled } from './Button.style';
 
 type ButtonType = {
-  variant?: "text" | "contained" | "outlined";
-  size?: "small" | "medium" | "large";
-  component?: "button" | "a";
+  variant?: 'text' | 'contained' | 'outlined';
+  size?: 'small' | 'medium' | 'large';
+  component?: 'button' | 'a';
   href?: string;
   disabled?: boolean;
   onClick?: (e: React.MouseEvent) => void;
@@ -17,16 +17,16 @@ type ButtonType = {
 };
 
 export const Button: React.FC<React.PropsWithChildren<ButtonType>> = ({
-  variant = "contained",
+  variant = 'contained',
   children,
-  size = "small",
-  component = "button",
+  size = 'small',
+  component = 'button',
   href,
   disabled,
   onClick,
   style,
   fitHeight,
-  endIcon
+  endIcon,
 }) => {
   return (
     <ButtonStyled $fitHeight={fitHeight}>

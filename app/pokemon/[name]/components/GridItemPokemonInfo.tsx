@@ -1,7 +1,7 @@
-import * as React from "react";
-import { PokemonBasicInfo } from "@/app/shared/components/PokemonBasicInfo/PokemonBasicInfo";
-import { PokemonFullDetailAPIType } from "@/app/types";
-import { Grid } from "@mui/material";
+import * as React from 'react';
+import { PokemonBasicInfo } from '@/app/shared/components/PokemonBasicInfo/PokemonBasicInfo';
+import { PokemonFullDetailAPIType } from '@/app/types';
+import { Grid } from '@mui/material';
 
 type GridItemPokemonInfoPropsType = {
   pokemon?: PokemonFullDetailAPIType;
@@ -17,10 +17,10 @@ const GridItemPokemonInfo: React.FC<GridItemPokemonInfoPropsType> = ({
       md={3}
       lg={3}
       style={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        alignContent: "flex-start",
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        alignContent: 'flex-start',
       }}
     >
       <PokemonBasicInfo pokemon={pokemon} />

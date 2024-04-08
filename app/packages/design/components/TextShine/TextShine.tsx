@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import React from "react";
-import { TextShineStyled } from "./TextShine.style";
+import React from 'react';
+import { TextShineStyled } from './TextShine.style';
 
 type TextShinePropsType = {
   text?: string;
@@ -12,7 +12,7 @@ type TextShinePropsType = {
 
 export const TextShine: React.FC<any> = ({
   text,
-  colors = ["#000000", "#FFFFFF"],
+  colors = ['#000000', '#FFFFFF'],
   style,
   enabled = true,
 }): React.ReactElement => {
@@ -20,10 +20,10 @@ export const TextShine: React.FC<any> = ({
     <TextShineStyled
       $colors={colors}
       $enabled={enabled}
-      className={"PackageDesignTextShine"}
+      className={'PackageDesignTextShine'}
       style={style}
     >
-      {text ?? ""}
+      {text ?? ''}
     </TextShineStyled>
   );
 };

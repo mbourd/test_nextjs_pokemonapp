@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useQuery } from "react-query";
-import React, { useCallback, useEffect } from "react";
-import { Container, Box, Typography, Grid } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { useQuery } from 'react-query';
+import React, { useCallback, useEffect } from 'react';
+import { Container, Box, Typography, Grid } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
-import { fetchPokemonsByCategory } from "../../api/pokemon";
-import { PageStyled } from "@/app/Page.style";
-import { PokemonDetailCard } from "@/app/shared/components/PokemonDetailCard/PokemonDetailCard";
-import { WaitLoaded } from "@/app/shared/components/WaitLoaded/WaitLoaded";
-import { PokemonShortDetailAPIType } from "@/app/types";
+import { fetchPokemonsByCategory } from '../../api/pokemon';
+import { PageStyled } from '@/app/Page.style';
+import { PokemonDetailCard } from '@/app/shared/components/PokemonDetailCard/PokemonDetailCard';
+import { WaitLoaded } from '@/app/shared/components/WaitLoaded/WaitLoaded';
+import { PokemonShortDetailAPIType } from '@/app/types';
 
 type PokemonListPropsType = {
   params: { type: string };
@@ -19,15 +19,15 @@ const PokemonListPage: React.FC<PokemonListPropsType> = ({ params }) => {
   const router = useRouter();
   const { type } = params;
   const { data: pokemons, isLoading } = useQuery<PokemonShortDetailAPIType[]>(
-    ["pokemonsByCategory", type],
-    () => fetchPokemonsByCategory(type)
+    ['pokemonsByCategory', type],
+    () => fetchPokemonsByCategory(type),
   );
 
   const onClickPokemon = useCallback(
     (pokemonName: string) => {
-      router.push("/pokemon/" + pokemonName);
+      router.push('/pokemon/' + pokemonName);
     },
-    [router]
+    [router],
   );
 
   return (
@@ -36,7 +36,7 @@ const PokemonListPage: React.FC<PokemonListPropsType> = ({ params }) => {
         Pokemons type: {type.toUpperCase()}
       </Typography>
       <Grid
-        className={"pokemon-categories"}
+        className={'pokemon-categories'}
         container
         spacing={3}
         rowSpacing={3}
@@ -47,7 +47,7 @@ const PokemonListPage: React.FC<PokemonListPropsType> = ({ params }) => {
             <Grid
               item
               xs={6}
-              key={pokemon?.pokemon?.name ?? ""}
+              key={pokemon?.pokemon?.name ?? ''}
               onClick={() => {
                 if (pokemon?.pokemon?.name)
                   onClickPokemon(pokemon.pokemon.name);

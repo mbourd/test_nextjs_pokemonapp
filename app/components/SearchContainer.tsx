@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
 /* eslint-disable react/display-name */
-import { TextField } from "@mui/material";
-import * as React from "react";
-import { useQuery } from "react-query";
-import { Button } from "../packages/design/components/Button/Button";
-import { PokemonFullDetailAPIType } from "../types";
-import { fetchPokemonDetail } from "../api/pokemon";
-import { SearchContainerStyled } from "./SearchContainer.style";
-import { PokeBallIconSVG } from "../packages/design/components/Icons/PokeBallIconSVG";
+import { TextField } from '@mui/material';
+import * as React from 'react';
+import { useQuery } from 'react-query';
+import { Button } from '../packages/design/components/Button/Button';
+import { PokemonFullDetailAPIType } from '../types';
+import { fetchPokemonDetail } from '../api/pokemon';
+import { SearchContainerStyled } from './SearchContainer.style';
+import { PokeBallIconSVG } from '../packages/design/components/Icons/PokeBallIconSVG';
 
 type SearchContainerPropsType = {
   setHasChangedSearchTerm?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,7 +23,7 @@ const SearchContainer = React.forwardRef<
   ImperativeHanlesType,
   SearchContainerPropsType
 >(({ setHasChangedSearchTerm }, ref) => {
-  const [searchPokemonTerm, setSearchPokemonTerm] = React.useState<string>("");
+  const [searchPokemonTerm, setSearchPokemonTerm] = React.useState<string>('');
 
   const {
     data: pokemonSearched,
@@ -31,20 +31,20 @@ const SearchContainer = React.forwardRef<
     refetch: refetchPokemonDetail,
     isError,
   } = useQuery<PokemonFullDetailAPIType>(
-    ["pokemonDetail", searchPokemonTerm],
+    ['pokemonDetail', searchPokemonTerm],
     () => fetchPokemonDetail(searchPokemonTerm),
     {
       enabled: false,
-    }
+    },
   );
 
   const getSearchTerm = React.useCallback(
     () => searchPokemonTerm,
-    [searchPokemonTerm]
+    [searchPokemonTerm],
   );
   const getPokemonSearched = React.useCallback(
     () => pokemonSearched,
-    [pokemonSearched]
+    [pokemonSearched],
   );
 
   React.useImperativeHandle(ref, () => {
@@ -81,7 +81,7 @@ const SearchContainer = React.forwardRef<
           setSearchPokemonTerm(e.target.value);
         }}
         onKeyDown={(e) => {
-          if (e.code === "Enter" || e.code === "NumpadEnter") {
+          if (e.code === 'Enter' || e.code === 'NumpadEnter') {
             refetchPokemonDetail();
           }
         }}

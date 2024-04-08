@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import { Grid } from "@mui/material";
+import styled from 'styled-components';
+import { Grid } from '@mui/material';
 
 type GridItemPokemonAvatarStyledPropsType = {
   $types?: { type?: { name?: string } }[];
 };
 
 const GridItemPokemonAvatarStyled = styled(
-  Grid
+  Grid,
 )<GridItemPokemonAvatarStyledPropsType>`
   border: solid 3px red;
   border-radius: 20px;
   background: ${({ theme, $types }) => {
-    if (!$types) return "#eeeee4";
+    if (!$types) return '#eeeee4';
 
     if ($types.length === 1) {
       if (!$types[0].type?.name) return theme.pokemon.categories.colors.unknown;
@@ -26,7 +26,7 @@ const GridItemPokemonAvatarStyled = styled(
       else colors.push(theme.pokemon.categories.colors[type.type.name]);
     }
 
-    return `linear-gradient(45deg, ${colors.join(",")})`;
+    return `linear-gradient(45deg, ${colors.join(',')})`;
   }};
 `;
 
