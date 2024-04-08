@@ -8,8 +8,8 @@ type GridItemPokemonAvatarStyledPropsType = {
 const GridItemPokemonAvatarStyled = styled(
   Grid
 )<GridItemPokemonAvatarStyledPropsType>`
-  border-radius: 20px;
   border: solid 3px red;
+  border-radius: 20px;
   background: ${({ theme, $types }) => {
     if (!$types) return "#eeeee4";
 

@@ -7,8 +7,8 @@ type PokemonDetailCardStyledPropsType = {
 };
 
 const PokemonDetailCardStyled = styled.div<PokemonDetailCardStyledPropsType>`
-  text-align: center;
   margin: 0 5 5 0;
+  text-align: center;
 
   .MuiCard-root:nth-child(1) {
     background-color: ${({ theme, $typeName }) => {
