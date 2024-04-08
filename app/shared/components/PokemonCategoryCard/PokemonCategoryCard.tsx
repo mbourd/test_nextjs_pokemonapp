@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-} from '@mui/material';
+import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import { PokemonCategoryCardStyled } from './PokemonCategoryCard.style';
 
 type PokemonCategoryPropsType = {
@@ -31,7 +25,7 @@ const PokemonCategoryCard: React.FC<PokemonCategoryPropsType> = ({
           image={''}
           alt={type?.name}
         /> */}
-          <CardContent data-test-id="PokemonCategoryCard-CardContent">
+          <CardContent data-testid="PokemonCategoryCard-CardContent">
             <Typography gutterBottom variant="h5" component="div">
               {type?.name?.toUpperCase() ?? ''}
             </Typography>

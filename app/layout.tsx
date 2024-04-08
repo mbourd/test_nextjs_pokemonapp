@@ -1,16 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import ReactQueryProvider from '@/providers/ReactQueryProvider';
-import { Box, Container, StyledEngineProvider } from '@mui/material';
+// import { Inter } from 'next/font/google';
+import { Box, Container } from '@mui/material';
 import * as React from 'react';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import theme from '@/theme';
 import { PageStyled } from './Page.style';
 import { ThirdPartySoftwareProvider } from '../providers/ThirdPartySoftwareProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Pokemon',

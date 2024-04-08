@@ -20,7 +20,7 @@ describe('<PokemonCategoryCard />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="PokemonCategoryCard-CardContent"]').should(
+        cy.get('[data-testid="PokemonCategoryCard-CardContent"]').should(
           'have.text',
           type?.name.toUpperCase(),
         );
@@ -37,7 +37,7 @@ describe('<PokemonCategoryCard />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="PokemonCategoryCard-CardContent"]').should(
+        cy.get('[data-testid="PokemonCategoryCard-CardContent"]').should(
           'have.text',
           type?.name.toUpperCase(),
         );
@@ -54,7 +54,7 @@ describe('<PokemonCategoryCard />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="PokemonCategoryCard-CardContent"]').should(
+        cy.get('[data-testid="PokemonCategoryCard-CardContent"]').should(
           'have.text',
           type?.name.toUpperCase(),
         );

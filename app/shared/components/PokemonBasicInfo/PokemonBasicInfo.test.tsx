@@ -10,19 +10,19 @@ describe('', function () {
       <PokemonBasicInfo pokemon={pokemonFullDetail} />,
     );
     const elementID = container.querySelector(
-      '[data-test-id="ListItemText-Typography-ID"]',
+      '[data-testid="ListItemText-Typography-ID"]',
     );
     const elementMoves = container.querySelector(
-      '[data-test-id="ListItemText-Typography-Moves"]',
+      '[data-testid="ListItemText-Typography-Moves"]',
     );
     const elementBaseExp = container.querySelector(
-      '[data-test-id="ListItemText-Typography-BaseExp"]',
+      '[data-testid="ListItemText-Typography-BaseExp"]',
     );
     const elementTypes = container.querySelectorAll(
-      '[data-test-id="ListItemText-Chip-Types"]',
+      '[data-testid="ListItemText-Chip-Types"]',
     );
     const elementAbilities = container.querySelectorAll(
-      '[data-test-id="ListItemText-Chip-Abilities"]',
+      '[data-testid="ListItemText-Chip-Abilities"]',
     );
 
     expect(elementID?.textContent).toEqual('' + pokemonFullDetail.id);

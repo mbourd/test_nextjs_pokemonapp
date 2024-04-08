@@ -1,6 +1,6 @@
 'use client';
 
-import { Typography, CircularProgress } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 
 type WaitLoadedPropsType = {
@@ -14,7 +14,7 @@ const WaitLoaded: React.FC<React.PropsWithChildren<WaitLoadedPropsType>> = ({
   if (isLoading)
     return (
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-        <span data-test-id="WaitLoaded-Typography">Loading...</span>
+        <span data-testid="WaitLoaded-Typography">Loading...</span>
       </Typography>
     );
 

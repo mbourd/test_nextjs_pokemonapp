@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { StyledEngineProvider } from '@mui/material';
 import { ThirdPartySoftwareProvider } from '../../providers/ThirdPartySoftwareProvider';
 
-type SetupTestsComponentProps = {};
+type SetupTestsComponentProps = {
+  //
+};
 
 const SetupTestsComponents: React.FC<
   React.PropsWithChildren<SetupTestsComponentProps>
 > = ({ children }) => {
-  let content = (
+  const content = (
     <ThirdPartySoftwareProvider>
       <main id="main-content">{children}</main>
     </ThirdPartySoftwareProvider>

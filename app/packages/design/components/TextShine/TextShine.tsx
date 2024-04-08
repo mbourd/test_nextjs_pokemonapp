@@ -10,7 +10,7 @@ type TextShinePropsType = {
   enabled?: boolean;
 };
 
-export const TextShine: React.FC<any> = ({
+export const TextShine: React.FC<TextShinePropsType> = ({
   text,
   colors = ['#000000', '#FFFFFF'],
   style,

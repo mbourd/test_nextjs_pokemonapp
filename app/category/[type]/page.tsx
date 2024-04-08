@@ -1,12 +1,11 @@
 'use client';
 
 import { useQuery } from 'react-query';
-import React, { useCallback, useEffect } from 'react';
-import { Container, Box, Typography, Grid } from '@mui/material';
+import React, { useCallback } from 'react';
+import { Typography, Grid, Fade } from '@mui/material';
 import { useRouter } from 'next/navigation';
 
 import { fetchPokemonsByCategory } from '../../api/pokemon';
-import { PageStyled } from '@/app/Page.style';
 import { PokemonDetailCard } from '@/app/shared/components/PokemonDetailCard/PokemonDetailCard';
 import { WaitLoaded } from '@/app/shared/components/WaitLoaded/WaitLoaded';
 import { PokemonShortDetailAPIType } from '@/app/types';
@@ -44,17 +43,18 @@ const PokemonListPage: React.FC<PokemonListPropsType> = ({ params }) => {
       >
         {pokemons?.map((pokemon) => {
           return (
-            <Grid
-              item
-              xs={6}
-              key={pokemon?.pokemon?.name ?? ''}
-              onClick={() => {
-                if (pokemon?.pokemon?.name)
-                  onClickPokemon(pokemon.pokemon.name);
-              }}
-            >
-              <PokemonDetailCard pokemon={pokemon} type={type} />
-            </Grid>
+            <Fade key={pokemon?.pokemon?.name ?? ''} in={true} timeout={1000}>
+              <Grid
+                item
+                xs={6}
+                onClick={() => {
+                  if (pokemon?.pokemon?.name)
+                    onClickPokemon(pokemon.pokemon.name);
+                }}
+              >
+                <PokemonDetailCard pokemon={pokemon} type={type} />
+              </Grid>
+            </Fade>
           );
         })}
       </Grid>

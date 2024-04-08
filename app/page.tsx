@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { useQuery } from 'react-query';
 import { fetchPokemonCategories } from './api/pokemon';
 import { PokemonCategoryCard } from './shared/components/PokemonCategoryCard/PokemonCategoryCard';
-import { Grid } from '@mui/material';
+import { Grid, Fade } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { WaitLoaded } from './shared/components/WaitLoaded/WaitLoaded';
 import { PokemonDetailCard } from './shared/components/PokemonDetailCard/PokemonDetailCard';
@@ -23,11 +23,9 @@ function MyApp() {
   >([]);
   const [hasChangedSearchTerm, setHasChangedSearchTerm] = React.useState(false);
 
-  const {
-    data: categories,
-    isLoading: isLoadingCategories,
-    refetch: refetchCategories,
-  } = useQuery<CategoryAPIType[]>('pokemonCategories', fetchPokemonCategories, {
+  const { data: categories, isLoading: isLoadingCategories } = useQuery<
+    CategoryAPIType[]
+  >('pokemonCategories', fetchPokemonCategories, {
     enabled: true,
   });
 
@@ -51,7 +49,7 @@ function MyApp() {
 
     if (!pokemonSearched) return;
 
-    setFilteredCategories((c) => {
+    setFilteredCategories(() => {
       if (pokemonSearched?.types)
         return pokemonSearched.types.map((type) => type.type);
 
@@ -81,24 +79,26 @@ function MyApp() {
               refSearchContainer.current?.getSearchTerm() ?? '';
 
             return (
-              <Grid item xs={6} key={type?.name ?? ''}>
-                <PokemonCategoryCard
-                  type={type}
-                  onClick={() => {
-                    if (type?.name) onClickCategory(type.name);
-                  }}
-                />
-                {filteredCategories.length ? (
-                  <PokemonDetailCard
-                    pokemon={{
-                      pokemon: { name: searchTerm },
-                    }}
+              <Fade key={type?.name ?? ''} in={true} timeout={1000}>
+                <Grid item xs={6}>
+                  <PokemonCategoryCard
+                    type={type}
                     onClick={() => {
-                      if (searchTerm) onClickPokemon(searchTerm);
+                      if (type?.name) onClickCategory(type.name);
                     }}
                   />
-                ) : null}
-              </Grid>
+                  {filteredCategories.length ? (
+                    <PokemonDetailCard
+                      pokemon={{
+                        pokemon: { name: searchTerm },
+                      }}
+                      onClick={() => {
+                        if (searchTerm) onClickPokemon(searchTerm);
+                      }}
+                    />
+                  ) : null}
+                </Grid>
+              </Fade>
             );
           },
         )}

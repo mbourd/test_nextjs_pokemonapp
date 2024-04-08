@@ -48,7 +48,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
               secondary={
                 <React.Fragment>
                   <Typography
-                    data-test-id="ListItemText-Typography-ID"
+                    data-testid="ListItemText-Typography-ID"
                     sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
@@ -70,7 +70,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                   {pokemon?.types?.map((type, index) => {
                     return (
                       <Chip
-                        data-test-id="ListItemText-Chip-Types"
+                        data-testid="ListItemText-Chip-Types"
                         component={'span'}
                         key={`${type?.type?.name}${index}`}
                         label={type?.type?.name ?? ''}
@@ -91,7 +91,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
                   {pokemon?.abilities?.map((ability, index) => {
                     return (
                       <Chip
-                        data-test-id="ListItemText-Chip-Abilities"
+                        data-testid="ListItemText-Chip-Abilities"
                         component={'span'}
                         key={`${ability?.ability?.name}${index}`}
                         label={ability?.ability?.name ?? ''}
@@ -110,7 +110,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
               secondary={
                 <React.Fragment>
                   <Typography
-                    data-test-id="ListItemText-Typography-Moves"
+                    data-testid="ListItemText-Typography-Moves"
                     sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
@@ -130,7 +130,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
               secondary={
                 <React.Fragment>
                   <Typography
-                    data-test-id="ListItemText-Typography-BaseExp"
+                    data-testid="ListItemText-Typography-BaseExp"
                     sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
@@ -150,7 +150,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
               secondary={
                 <React.Fragment>
                   <Typography
-                    data-test-id="ListItemText-Typography-Weight"
+                    data-testid="ListItemText-Typography-Weight"
                     sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"
@@ -170,7 +170,7 @@ export const PokemonBasicInfo: React.FC<PokemonBasicInfoPropsType> = ({
               secondary={
                 <React.Fragment>
                   <Typography
-                    data-test-id="ListItemText-Typography-Height"
+                    data-testid="ListItemText-Typography-Height"
                     sx={{ display: 'inline' }}
                     component="span"
                     variant="body2"

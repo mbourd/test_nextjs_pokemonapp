@@ -7,7 +7,6 @@ import { Typography, Grid } from '@mui/material';
 import { WaitLoaded } from '@/app/shared/components/WaitLoaded/WaitLoaded';
 import { PokemonFullDetailAPIType } from '@/app/types';
 import { getRandomNumberBetween } from '@/app/packages/helpers/getRandomNumberBetween';
-import dynamic from 'next/dynamic';
 import { capitalizeFirstLetter } from '@/app/packages/helpers/capitalizeFirstLetter';
 import { GridItemPokemonInfo } from './components/GridItemPokemonInfo';
 import { GridItemPokemonChart } from './components/GridItemPokemonChart';
@@ -29,7 +28,7 @@ const PokemonDetailPage: React.FC<PokemonDetailPropsType> = ({ params }) => {
 
   React.useEffect(() => {
     if (pokemon) {
-      setIsShiny((s) => {
+      setIsShiny(() => {
         const isShiny = getRandomNumberBetween(1, 3) === 1;
 
         // if (isShiny)

@@ -1,6 +1,5 @@
-import { getRandomNumberBetween } from '@/app/packages/helpers/getRandomNumberBetween';
 import { PokemonFullDetailAPIType } from '@/app/types';
-import { Grid } from '@mui/material';
+import { Fade, Grid } from '@mui/material';
 import dynamic from 'next/dynamic';
 import * as React from 'react';
 
@@ -42,7 +41,7 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
             return stat?.stat?.name ?? '';
           }),
         );
-        setSeries((series) => {
+        setSeries(() => {
           const serie = {
             name: 'Basic stat',
             data: pokemon.stats.map((stat) => {
@@ -57,27 +56,29 @@ const GridItemPokemonChart: React.FC<GridItemPokemonChartPropsType> = ({
   }, [pokemon]);
 
   return (
-    <Grid
-      item
-      xs={5}
-      md={5}
-      lg={5}
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
-      }}
-    >
-      <ApexChartNoSSR
-        className="pokemon-chart"
-        type="radar"
-        options={options}
-        series={series}
-        width={'800px'}
-        height={'500px'}
-      />
-    </Grid>
+    <Fade in={true} timeout={1000}>
+      <Grid
+        item
+        xs={5}
+        md={5}
+        lg={5}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignContent: 'center',
+        }}
+      >
+        <ApexChartNoSSR
+          className="pokemon-chart"
+          type="radar"
+          options={options}
+          series={series}
+          width={'800px'}
+          height={'500px'}
+        />
+      </Grid>
+    </Fade>
   );
 };
 

@@ -15,6 +15,7 @@ const GridItemPokemonAvatarStyled = styled(
 
     if ($types.length === 1) {
       if (!$types[0].type?.name) return theme.pokemon.categories.colors.unknown;
+
       return theme.pokemon.categories.colors[$types[0].type.name];
     }
 

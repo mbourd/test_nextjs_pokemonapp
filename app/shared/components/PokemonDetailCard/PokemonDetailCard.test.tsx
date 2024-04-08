@@ -10,7 +10,7 @@ describe('<PokemonDetialCard />', function () {
     };
     const { container } = render(<PokemonDetailCard pokemon={pokemon} />);
     const content = container.querySelectorAll(
-      '[data-test-id="PokemonDetailCard-CardContent"]',
+      '[data-testid="PokemonDetailCard-CardContent"]',
     );
 
     expect(content.length).toEqual(1);
@@ -23,7 +23,7 @@ describe('<PokemonDetialCard />', function () {
     };
     const { container } = render(<PokemonDetailCard pokemon={pokemon} />);
     const content = container.querySelectorAll(
-      '[data-test-id="PokemonDetailCard-CardContent"]',
+      '[data-testid="PokemonDetailCard-CardContent"]',
     );
 
     expect(content.length).toEqual(1);
@@ -36,7 +36,7 @@ describe('<PokemonDetialCard />', function () {
     };
     const { container } = render(<PokemonDetailCard pokemon={pokemon} />);
     const content = container.querySelectorAll(
-      '[data-test-id="PokemonDetailCard-CardContent"]',
+      '[data-testid="PokemonDetailCard-CardContent"]',
     );
 
     expect(content.length).toEqual(1);

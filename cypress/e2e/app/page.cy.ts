@@ -35,7 +35,7 @@ describe('app/', function () {
   it('should filter catgory when searching a Pokemon', function () {
     const keyword = 'venusaur';
 
-    cy.get('[data-test-id="page-input-search"]').type(keyword).type('{ENTER}');
+    cy.get('[data-testid="page-input-search"]').type(keyword).type('{ENTER}');
     cy.wait('@requestGET_fetchPokemonDetail').then((inteception) => {
       const { response } = inteception;
       const { body } = response;
@@ -62,7 +62,7 @@ describe('app/', function () {
   it('should filter catgory when searching a Pokemon', function () {
     const keyword = 'charizard';
 
-    cy.get('[data-test-id="page-input-search"]').type(keyword).type('{ENTER}');
+    cy.get('[data-testid="page-input-search"]').type(keyword).type('{ENTER}');
     cy.wait('@requestGET_fetchPokemonDetail').then((inteception) => {
       const { response } = inteception;
       const { body } = response;
@@ -89,7 +89,7 @@ describe('app/', function () {
   it('should filter catgory when searching a Pokemon', function () {
     const keyword = 'blastoise';
 
-    cy.get('[data-test-id="page-input-search"]').type(keyword).type('{ENTER}');
+    cy.get('[data-testid="page-input-search"]').type(keyword).type('{ENTER}');
     cy.wait('@requestGET_fetchPokemonDetail').then((inteception) => {
       const { response } = inteception;
       const { body } = response;

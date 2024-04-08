@@ -27,19 +27,19 @@ describe('<PokemonBasicInfo />', function () {
     )
       .wait(500)
       .then(() => {
-        cy.get('[data-test-id="ListItemText-Typography-ID"]').should(
+        cy.get('[data-testid="ListItemText-Typography-ID"]').should(
           'have.text',
           pokemonFullDetail.id,
         );
-        cy.get('[data-test-id="ListItemText-Typography-Moves"]').should(
+        cy.get('[data-testid="ListItemText-Typography-Moves"]').should(
           'have.text',
           pokemonFullDetail.moves?.length,
         );
-        cy.get('[data-test-id="ListItemText-Typography-BaseExp"]').should(
+        cy.get('[data-testid="ListItemText-Typography-BaseExp"]').should(
           'have.text',
           pokemonFullDetail.base_experience,
         );
-        cy.get('[data-test-id="ListItemText-Chip-Types"]')
+        cy.get('[data-testid="ListItemText-Chip-Types"]')
           .should('have.length', pokemonFullDetail.types.length)
           .each(($ChipType, i) => {
             cy.wrap($ChipType).should(
@@ -47,7 +47,7 @@ describe('<PokemonBasicInfo />', function () {
               pokemonFullDetail.types[i].type.name,
             );
           });
-        cy.get('[data-test-id="ListItemText-Chip-Abilities"]')
+        cy.get('[data-testid="ListItemText-Chip-Abilities"]')
           .should('have.length', pokemonFullDetail.abilities?.length)
           .each(($ChipAbility, i) => {
             cy.wrap($ChipAbility).should(

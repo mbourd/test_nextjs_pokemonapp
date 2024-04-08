@@ -18,7 +18,7 @@ describe('<WaitLoaded />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="WaitLoaded-Typography"]').should(
+        cy.get('[data-testid="WaitLoaded-Typography"]').should(
           'have.text',
           'Loading...',
         );
@@ -29,15 +29,13 @@ describe('<WaitLoaded />', function () {
     cy.mount(
       <SetupTestsComponents>
         <WaitLoaded>
-          <div data-test-id="cypress-test">
-            Hello world, not loading anymore
-          </div>
+          <div data-testid="cypress-test">Hello world, not loading anymore</div>
         </WaitLoaded>
       </SetupTestsComponents>,
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="cypress-test"]').should('exist');
+        cy.get('[data-testid="cypress-test"]').should('exist');
       });
   });
 });

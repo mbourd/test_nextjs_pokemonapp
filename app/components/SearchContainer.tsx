@@ -73,7 +73,7 @@ const SearchContainer = React.forwardRef<
   return (
     <SearchContainerStyled>
       <TextField
-        data-test-id="page-input-search"
+        data-testid="page-input-search"
         id="filled-basic"
         label="Search a Pokemon"
         variant="filled"

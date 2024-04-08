@@ -24,7 +24,7 @@ describe('<PokemonDetailCard />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="PokemonDetailCard-CardContent"]').should(
+        cy.get('[data-testid="PokemonDetailCard-CardContent"]').should(
           'have.text',
           capitalizeFirstLetter(pokemon?.pokemon?.name ?? ''),
         );
@@ -43,7 +43,7 @@ describe('<PokemonDetailCard />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="PokemonDetailCard-CardContent"]').should(
+        cy.get('[data-testid="PokemonDetailCard-CardContent"]').should(
           'have.text',
           capitalizeFirstLetter(pokemon?.pokemon?.name ?? ''),
         );
@@ -62,7 +62,7 @@ describe('<PokemonDetailCard />', function () {
     )
       .wait(1000)
       .then(() => {
-        cy.get('[data-test-id="PokemonDetailCard-CardContent"]').should(
+        cy.get('[data-testid="PokemonDetailCard-CardContent"]').should(
           'have.text',
           capitalizeFirstLetter(pokemon?.pokemon?.name ?? ''),
         );
