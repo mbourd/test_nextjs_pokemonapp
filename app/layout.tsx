@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 // import { Inter } from 'next/font/google';
 import { Box, Container } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 import { PageStyled } from './Page.style';
 import { ThirdPartySoftwareProvider } from '../providers/ThirdPartySoftwareProvider';
 

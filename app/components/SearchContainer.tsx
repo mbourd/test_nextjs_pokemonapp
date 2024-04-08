@@ -2,7 +2,7 @@
 
 /* eslint-disable react/display-name */
 import { CircularProgress, TextField } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import { Button } from '../packages/design/components/Button/Button';
 import { PokemonFullDetailAPIType } from '../types';
@@ -82,14 +82,16 @@ const SearchContainer = React.forwardRef<
         }}
         onKeyDown={(e) => {
           if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-            refetchPokemonDetail();
+            void refetchPokemonDetail();
           }
         }}
       />
       <Button
         fitHeight
         size="large"
-        onClick={() => refetchPokemonDetail()}
+        onClick={() => {
+          void refetchPokemonDetail();
+        }}
         endIcon={
           isLoadingPokemonDetail ? (
             <CircularProgress color="warning" />

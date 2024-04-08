@@ -37,7 +37,7 @@ const PokemonDetailPage: React.FC<PokemonDetailPropsType> = ({ params }) => {
         return isShiny;
       });
 
-      if (pokemon?.cries.latest) new Audio(pokemon?.cries.latest).play();
+      if (pokemon?.cries.latest) void new Audio(pokemon?.cries.latest).play();
     }
   }, [pokemon]);
 

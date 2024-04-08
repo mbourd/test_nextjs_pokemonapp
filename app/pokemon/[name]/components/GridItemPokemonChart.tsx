@@ -3,7 +3,7 @@
 import { PokemonFullDetailAPIType } from '@/app/types';
 import { Fade, Grid } from '@mui/material';
 import dynamic from 'next/dynamic';
-import * as React from 'react';
+import React from 'react';
 
 type GridItemPokemonChartPropsType = {
   pokemon?: PokemonFullDetailAPIType;

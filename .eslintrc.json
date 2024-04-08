@@ -17,7 +17,14 @@
   "overrides": [
     {
       "extends": ["plugin:@typescript-eslint/disable-type-checked"],
-      "files": ["**/*.js"]
+      "files": ["**/*.{js,mjs,cjs}"]
+    },
+    {
+      "extends": ["plugin:@typescript-eslint/disable-type-checked"],
+      "files": ["./*.{js,mjs,cjs}"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
     }
   ],
   "parser": "@typescript-eslint/parser",

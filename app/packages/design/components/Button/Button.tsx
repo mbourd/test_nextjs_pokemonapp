@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React from 'react';
 import { Button as MUIButton } from '@mui/material';
 import { ButtonStyled } from './Button.style';
 

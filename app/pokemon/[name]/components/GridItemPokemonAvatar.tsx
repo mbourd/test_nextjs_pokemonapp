@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React from 'react';
 import { TextShine } from '@/app/packages/design/components/TextShine/TextShine';
 import { PokemonFullDetailAPIType } from '@/app/types';
 import { Badge, Avatar, Fade, Grid } from '@mui/material';
@@ -17,7 +17,7 @@ const GridItemPokemonAvatar: React.FC<GridItemPokemonAvatarPropsType> = ({
   isShiny,
 }) => {
   const onClickPlayCries = React.useCallback(() => {
-    if (pokemon?.cries.latest) new Audio(pokemon?.cries.latest).play();
+    if (pokemon?.cries.latest) void new Audio(pokemon?.cries.latest).play();
   }, [pokemon?.cries.latest]);
 
   return (

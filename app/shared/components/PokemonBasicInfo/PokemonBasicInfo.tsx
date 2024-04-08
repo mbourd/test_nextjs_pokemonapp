@@ -10,7 +10,7 @@ import {
   ListSubheader,
   Typography,
 } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 import { PokemonBasicInfoStyled } from './PokemonBasicInfo.style';
 import { ChipColoredTypeStyled } from './ChipColoredType.style';
 import { ChipStyled } from '@/app/packages/design/components/Chip/Chip.style';
