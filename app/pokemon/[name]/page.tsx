@@ -5,8 +5,20 @@ type PokemonDetailPropsType = {
   params: { name: string };
 };
 
-export function generateStaticParams() {
-  return [{ name: 'bulbasaur' }];
+type ResponseType = {
+  results: { name: string }[];
+};
+
+export async function generateStaticParams() {
+  const response = await fetch(
+    `https://pokeapi.co/api/v2/pokemon?offset=0&limit=999999`,
+  );
+
+  if (!response || !response.ok) return [];
+
+  const data: ResponseType = await response.json();
+
+  return data.results.map((pokemon) => ({ name: pokemon?.name ?? '' }));
 }
 
 const PokemonDetailPage: React.FC<PokemonDetailPropsType> = ({ params }) => {
