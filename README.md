@@ -1,6 +1,8 @@
 
 Project developed by Maxime Bourdin
 
+Please visit the online application: [Pokemon Dex App](https://mbourd.github.io/test_nextjs_pokemonapp)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Project context
