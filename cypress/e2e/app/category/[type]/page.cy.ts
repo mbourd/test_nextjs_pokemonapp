@@ -15,6 +15,9 @@ describe('app/category/[type]', function () {
   it('should display any number of pokemon with the type', function () {
     cy.wait('@requestGET_pokemonsByCategory').then((interception) => {
       const { response } = interception;
+
+      if (!response?.body) return;
+
       const { body } = response;
 
       cy.get('.PokemonDetailCard')

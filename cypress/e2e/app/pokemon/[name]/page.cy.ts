@@ -18,7 +18,6 @@ describe('app/category/[name]', function () {
   it('should display any number of pokemon with the type', function () {
     cy.wait('@requestGET_pokemonDetail').then((interception) => {
       const { response } = interception;
-      const { body } = response;
 
       cy.get('.pokemon-chart').should('exist');
     });

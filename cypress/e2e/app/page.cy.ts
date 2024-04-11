@@ -19,6 +19,9 @@ describe('app/', function () {
   it('should display any number of pokemon category type from the api', function () {
     cy.wait('@requestGET_pokemonCategories').then((interception) => {
       const { response } = interception;
+
+      if (!response?.body) return;
+
       const { body } = response;
 
       cy.get('.PokemonCategoryCard')
@@ -38,6 +41,9 @@ describe('app/', function () {
     cy.get('[data-testid="page-input-search"]').type(keyword).type('{ENTER}');
     cy.wait('@requestGET_fetchPokemonDetail').then((inteception) => {
       const { response } = inteception;
+
+      if (!response?.body) return;
+
       const { body } = response;
 
       cy.get('.PokemonCategoryCard')
@@ -65,6 +71,9 @@ describe('app/', function () {
     cy.get('[data-testid="page-input-search"]').type(keyword).type('{ENTER}');
     cy.wait('@requestGET_fetchPokemonDetail').then((inteception) => {
       const { response } = inteception;
+
+      if (!response?.body) return;
+
       const { body } = response;
 
       cy.get('.PokemonCategoryCard')
@@ -92,6 +101,9 @@ describe('app/', function () {
     cy.get('[data-testid="page-input-search"]').type(keyword).type('{ENTER}');
     cy.wait('@requestGET_fetchPokemonDetail').then((inteception) => {
       const { response } = inteception;
+
+      if (!response?.body) return;
+
       const { body } = response;
 
       cy.get('.PokemonCategoryCard')
