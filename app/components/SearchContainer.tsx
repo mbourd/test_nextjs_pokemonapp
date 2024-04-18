@@ -78,7 +78,7 @@ const SearchContainer = React.forwardRef<
         label="Search a Pokemon"
         variant="filled"
         onChange={(e) => {
-          setSearchPokemonTerm(e.target.value);
+          setSearchPokemonTerm(e.target.value.toLowerCase());
         }}
         onKeyDown={(e) => {
           if (e.code === 'Enter' || e.code === 'NumpadEnter') {
